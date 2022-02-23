@@ -8,7 +8,7 @@ import 'package:bloc_architecture_learning/core/helper/network_helper/network_in
     as _i11;
 import 'package:bloc_architecture_learning/env/i_env.dart' as _i12;
 import 'package:bloc_architecture_learning/features/data/data_sources/movie_local_datasource.dart'
-    as _i15;
+    as _i16;
 import 'package:bloc_architecture_learning/features/data/repository/movie_repository.dart'
     as _i7;
 import 'package:bloc_architecture_learning/features/domain/entities/movie.dart'
@@ -21,6 +21,7 @@ import 'package:dio/src/dio_mixin.dart' as _i5;
 import 'package:dio/src/options.dart' as _i2;
 import 'package:dio/src/response.dart' as _i6;
 import 'package:dio/src/transformer.dart' as _i4;
+import 'package:hive/hive.dart' as _i15;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -436,11 +437,134 @@ class MockDio extends _i1.Mock implements _i13.Dio {
           as _i8.Future<_i6.Response<T>>);
 }
 
+/// A class which mocks [Box].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockBox<E> extends _i1.Mock implements _i15.Box<E> {
+  MockBox() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  Iterable<E> get values =>
+      (super.noSuchMethod(Invocation.getter(#values), returnValue: <E>[])
+          as Iterable<E>);
+  @override
+  String get name =>
+      (super.noSuchMethod(Invocation.getter(#name), returnValue: '') as String);
+  @override
+  bool get isOpen =>
+      (super.noSuchMethod(Invocation.getter(#isOpen), returnValue: false)
+          as bool);
+  @override
+  bool get lazy =>
+      (super.noSuchMethod(Invocation.getter(#lazy), returnValue: false)
+          as bool);
+  @override
+  Iterable<dynamic> get keys =>
+      (super.noSuchMethod(Invocation.getter(#keys), returnValue: <dynamic>[])
+          as Iterable<dynamic>);
+  @override
+  int get length =>
+      (super.noSuchMethod(Invocation.getter(#length), returnValue: 0) as int);
+  @override
+  bool get isEmpty =>
+      (super.noSuchMethod(Invocation.getter(#isEmpty), returnValue: false)
+          as bool);
+  @override
+  bool get isNotEmpty =>
+      (super.noSuchMethod(Invocation.getter(#isNotEmpty), returnValue: false)
+          as bool);
+  @override
+  Iterable<E> valuesBetween({dynamic startKey, dynamic endKey}) =>
+      (super.noSuchMethod(
+          Invocation.method(
+              #valuesBetween, [], {#startKey: startKey, #endKey: endKey}),
+          returnValue: <E>[]) as Iterable<E>);
+  @override
+  E? getAt(int? index) =>
+      (super.noSuchMethod(Invocation.method(#getAt, [index])) as E?);
+  @override
+  Map<dynamic, E> toMap() => (super.noSuchMethod(Invocation.method(#toMap, []),
+      returnValue: <dynamic, E>{}) as Map<dynamic, E>);
+  @override
+  dynamic keyAt(int? index) =>
+      super.noSuchMethod(Invocation.method(#keyAt, [index]));
+  @override
+  _i8.Stream<_i15.BoxEvent> watch({dynamic key}) => (super.noSuchMethod(
+      Invocation.method(#watch, [], {#key: key}),
+      returnValue: Stream<_i15.BoxEvent>.empty()) as _i8.Stream<_i15.BoxEvent>);
+  @override
+  bool containsKey(dynamic key) =>
+      (super.noSuchMethod(Invocation.method(#containsKey, [key]),
+          returnValue: false) as bool);
+  @override
+  _i8.Future<void> put(dynamic key, E? value) =>
+      (super.noSuchMethod(Invocation.method(#put, [key, value]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> putAt(int? index, E? value) =>
+      (super.noSuchMethod(Invocation.method(#putAt, [index, value]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> putAll(Map<dynamic, E>? entries) =>
+      (super.noSuchMethod(Invocation.method(#putAll, [entries]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<int> add(E? value) =>
+      (super.noSuchMethod(Invocation.method(#add, [value]),
+          returnValue: Future<int>.value(0)) as _i8.Future<int>);
+  @override
+  _i8.Future<Iterable<int>> addAll(Iterable<E>? values) =>
+      (super.noSuchMethod(Invocation.method(#addAll, [values]),
+              returnValue: Future<Iterable<int>>.value(<int>[]))
+          as _i8.Future<Iterable<int>>);
+  @override
+  _i8.Future<void> delete(dynamic key) =>
+      (super.noSuchMethod(Invocation.method(#delete, [key]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> deleteAt(int? index) =>
+      (super.noSuchMethod(Invocation.method(#deleteAt, [index]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> deleteAll(Iterable<dynamic>? keys) =>
+      (super.noSuchMethod(Invocation.method(#deleteAll, [keys]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> compact() =>
+      (super.noSuchMethod(Invocation.method(#compact, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<int> clear() => (super.noSuchMethod(Invocation.method(#clear, []),
+      returnValue: Future<int>.value(0)) as _i8.Future<int>);
+  @override
+  _i8.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> deleteFromDisk() =>
+      (super.noSuchMethod(Invocation.method(#deleteFromDisk, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+  @override
+  _i8.Future<void> flush() => (super.noSuchMethod(Invocation.method(#flush, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
+}
+
 /// A class which mocks [MovieLocalDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockMovieLocalDataSource extends _i1.Mock
-    implements _i15.MovieLocalDataSource {
+    implements _i16.MovieLocalDataSource {
   @override
   _i8.Future<Set<_i10.Movie>?> cacheFavourite(Set<_i10.Movie>? newFavourite) =>
       (super.noSuchMethod(Invocation.method(#cacheFavourite, [newFavourite]),

@@ -16,12 +16,12 @@ class MovieModelAdapter extends TypeAdapter<MovieModel> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return  MovieModel(adult: fields[0],backdrop_path: fields[1], genre_ids: fields[2],id: fields[3],original_language: fields[4],original_title: fields[5],overview: fields[6],popularity: fields[7],release_date: fields[8],title: fields[9],video: fields[10],vote_average: fields[11],vote_count: fields[12]);
+    return MovieModel(adult: fields[0],backdrop_path: fields[1], genre_ids: fields[2],id: fields[3],original_language: fields[4],original_title: fields[5],overview: fields[6],popularity: fields[7],release_date: fields[8],title: fields[9],video: fields[10],vote_average: fields[11],vote_count: fields[12]);
   }
 
   @override
   void write(BinaryWriter writer, MovieModel obj) {
- writer
+  writer
       ..writeByte(13)
       ..writeByte(0)
       ..write(obj.adult)
@@ -40,8 +40,7 @@ class MovieModelAdapter extends TypeAdapter<MovieModel> {
       ..writeByte(9)..write(obj.title)
       ..writeByte(10)..write(obj.video)
       ..writeByte(11)..write(obj.vote_average)
-      ..writeByte(12)..write(obj.vote_count)
-      ;
+      ..writeByte(12)..write(obj.vote_count);
   }
 
   @override

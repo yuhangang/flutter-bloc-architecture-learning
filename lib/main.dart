@@ -17,7 +17,7 @@ void main() async{
   
     WidgetsFlutterBinding.ensureInitialized();
      
-  await service_locator.init();
+ 
    BlocOverrides.runZoned(
     () {
   
@@ -35,6 +35,7 @@ void main() async{
 
  
     movieBox =await Hive.openBox<Movie>("favourite_box");
+     await service_locator.init();
   runApp( MyApp());
 }
 

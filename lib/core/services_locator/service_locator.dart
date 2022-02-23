@@ -24,7 +24,7 @@ Future<void> init() async{
       () => MovieDataSourceImpl(dio: sl(),env: sl()));
   sl.registerLazySingleton<
           MovieLocalDataSource>(
-      () => MovieLocalDataSourceImpl());
+      () => MovieLocalDataSourceImpl(movieBox: movieBox));
   sl.registerLazySingleton<MovieRepository>(() =>MovieRepositoryImpl(movieDataSource: sl(), networkInfo: sl()));
 
   sl.registerLazySingleton(
