@@ -1,8 +1,6 @@
 
 
 import 'package:bloc_architecture_learning/features/domain/entities/movie.dart';
-import 'package:flutter/foundation.dart';
-
 import 'package:hive/hive.dart';
 part 'movie_model.g.dart';
 
@@ -52,7 +50,7 @@ class MovieResponseModel {
 @HiveType(typeId: 1)
 class MovieModel extends Movie{
  
-  MovieModel({
+  const MovieModel({
     @HiveField(0) required bool? adult,
     @HiveField(1) required String? backdrop_path,
     @HiveField(2) required List<int>? genre_ids,

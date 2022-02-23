@@ -1,7 +1,6 @@
 import 'package:bloc_architecture_learning/core/error/error.dart';
 import 'package:bloc_architecture_learning/core/helper/network_helper/network_info_helper.dart';
 import 'package:bloc_architecture_learning/features/data/data_sources/movie_datasource.dart';
-import 'package:bloc_architecture_learning/features/data/data_sources/movie_local_datasource.dart';
 import 'package:bloc_architecture_learning/features/data/repository/movie_repository.dart';
 import 'package:bloc_architecture_learning/features/domain/entities/movie.dart';
 import 'package:dartz/dartz.dart';

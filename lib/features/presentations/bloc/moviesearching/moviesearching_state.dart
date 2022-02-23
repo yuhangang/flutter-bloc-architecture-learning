@@ -9,11 +9,13 @@ abstract class MoviesearchingState extends Equatable {
 
 class MoviesearchingStateEmpty extends MoviesearchingState {}
 
-class MoviesearchingStateLoading extends MoviesearchingState {}
+class MoviesearchingStateLoading extends MoviesearchingState {
+  const MoviesearchingStateLoading();
+}
 
 class MoviesearchingStateSuccess extends MoviesearchingState {
-  List<Movie> movies;
-  MoviesearchingStateSuccess({required this.movies});
+  final List<Movie> movies;
+  const MoviesearchingStateSuccess({required this.movies});
 }
 
 class MoviesearchingStateError extends MoviesearchingState {

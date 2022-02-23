@@ -1,7 +1,5 @@
 import 'dart:math' as math;
-
 import 'package:bloc_architecture_learning/features/presentations/bloc/favoritemovie/favoritemovie_bloc.dart';
-import 'package:bloc_architecture_learning/features/presentations/bloc/moviesearching/moviesearching_bloc.dart';
 import 'package:bloc_architecture_learning/features/presentations/widgets/ui/movie_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

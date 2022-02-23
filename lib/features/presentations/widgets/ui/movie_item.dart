@@ -1,12 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bloc_architecture_learning/core/router/router.dart';
 import 'package:bloc_architecture_learning/features/domain/entities/movie.dart';
-import 'package:bloc_architecture_learning/features/presentations/bloc/favoritemovie/favoritemovie_bloc.dart';
 import 'package:bloc_architecture_learning/features/presentations/widgets/favourite_widget.dart';
 import 'package:bloc_architecture_learning/features/presentations/widgets/my_image_builder.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class MovieItem extends StatelessWidget {
   const MovieItem({

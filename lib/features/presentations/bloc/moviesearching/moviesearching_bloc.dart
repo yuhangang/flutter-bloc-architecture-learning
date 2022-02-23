@@ -32,7 +32,7 @@ class MoviesearchingBloc extends Bloc<MoviesearchingEvent, MoviesearchingState> 
     final searchTerm = event.text;
     if (searchTerm.isEmpty) return emit(MoviesearchingStateEmpty());
 
-    emit(MoviesearchingStateLoading());
+    emit(const MoviesearchingStateLoading());
 
     try {
       final results = await movieRepository.searchMovie(event.text);

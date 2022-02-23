@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc_architecture_learning/core/error/error.dart';
 import 'package:bloc_architecture_learning/env/i_env.dart';
 import 'package:bloc_architecture_learning/features/data/model/movie_model.dart';
