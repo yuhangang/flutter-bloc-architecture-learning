@@ -7,32 +7,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mockito/mockito.dart';
 
+import '../shared_mocks/shared_mocks.dart';
+
 class MockHiveInterface extends Mock implements HiveInterface {}
 class MockHiveBox<T> extends Mock implements Box<T> {}
 
 
 late Box<Movie> movieBoxTest;
 
-void main(List<String> args){
+void main(){
   
   late final  MovieLocalDataSourceImpl dataSourceImpl;
   // late final MockHiveInterface mockHiveInterface;
   late final MockHiveBox<Movie> mockHiveBox;
 
-       final Movie movie = Movie(
-      adult: true,
-      backdrop_path: "",
-      genre_ids: const [],
-      id: 1,
-      original_language: "en",
-      original_title: "original title",
-      overview: "overview",
-      popularity: 7,
-      release_date: DateTime(2020, 01, 01),
-      title: "title",
-      video: true,
-      vote_average: 5.5,
-      vote_count: 100);
+  
   setUp(()async{
 
  //mockHiveInterface = MockHiveInterface();

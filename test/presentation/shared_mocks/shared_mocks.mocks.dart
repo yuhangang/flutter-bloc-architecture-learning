@@ -7,6 +7,8 @@ import 'dart:async' as _i8;
 import 'package:bloc_architecture_learning/core/helper/network_helper/network_info_helper.dart'
     as _i11;
 import 'package:bloc_architecture_learning/env/i_env.dart' as _i12;
+import 'package:bloc_architecture_learning/features/data/data_sources/movie_datasource.dart'
+    as _i17;
 import 'package:bloc_architecture_learning/features/data/data_sources/movie_local_datasource.dart'
     as _i16;
 import 'package:bloc_architecture_learning/features/data/repository/movie_repository.dart'
@@ -14,9 +16,9 @@ import 'package:bloc_architecture_learning/features/data/repository/movie_reposi
 import 'package:bloc_architecture_learning/features/domain/entities/movie.dart'
     as _i10;
 import 'package:dartz/dartz.dart' as _i9;
+import 'package:dio/dio.dart' as _i13;
 import 'package:dio/src/adapter.dart' as _i3;
 import 'package:dio/src/cancel_token.dart' as _i14;
-import 'package:dio/src/dio.dart' as _i13;
 import 'package:dio/src/dio_mixin.dart' as _i5;
 import 'package:dio/src/options.dart' as _i2;
 import 'package:dio/src/response.dart' as _i6;
@@ -580,4 +582,14 @@ class MockMovieLocalDataSource extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#removeFavourite, [movie]),
               returnValue: Future<Set<_i10.Movie>?>.value())
           as _i8.Future<Set<_i10.Movie>?>);
+}
+
+/// A class which mocks [MovieDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieDataSource extends _i1.Mock implements _i17.MovieDataSource {
+  @override
+  _i8.Future<List<_i10.Movie>>? searchMovie(String? keyword) =>
+      (super.noSuchMethod(Invocation.method(#searchMovie, [keyword]))
+          as _i8.Future<List<_i10.Movie>>?);
 }

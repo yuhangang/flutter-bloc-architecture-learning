@@ -41,7 +41,7 @@ class HomePageSearchScreen extends StatelessWidget {
           BlocConsumer<MoviesearchingBloc, MoviesearchingState>(
         
             listener: (context, state) {
-           
+           log("listen to search bloc... $state");
             },
             builder: (context, state) {
               switch (state){

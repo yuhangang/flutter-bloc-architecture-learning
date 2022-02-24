@@ -3,7 +3,6 @@ import 'package:bloc_architecture_learning/features/data/data_sources/movie_data
 import 'package:bloc_architecture_learning/features/data/repository/movie_repository_impl.dart';
 import 'package:bloc_architecture_learning/features/presentations/bloc/moviesearching/moviesearching_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import '../shared_mocks/shared_mocks.mocks.dart';
 
@@ -15,7 +14,7 @@ import '../shared_mocks/shared_mocks.mocks.dart';
     group('FavouriteMovieBloc',(){
    late MoviesearchingBloc moviesearchingBloc;
    setUp((){
-   moviesearchingBloc = _getBloc();
+   moviesearchingBloc = _generateBloc();
 
 
    });
@@ -24,7 +23,7 @@ import '../shared_mocks/shared_mocks.mocks.dart';
     });
       blocTest<MoviesearchingBloc, MoviesearchingState>(
       'emit loading state then outcome when one data is added',
-      build: () => _getBloc(),
+      build: () => _generateBloc(),
       act: (bloc) {
         bloc.add(const MovieSearchInputChange(text: "new"));
       },
@@ -41,4 +40,4 @@ import '../shared_mocks/shared_mocks.mocks.dart';
 
  }
 
- MoviesearchingBloc _getBloc() =>  MoviesearchingBloc(movieRepository: MovieRepositoryImpl(networkInfo: MockNetworkInfoHelper(),movieDataSource: MovieDataSourceImpl(dio: MockDio(),env: AppEnvDev())));
+ MoviesearchingBloc _generateBloc() =>  MoviesearchingBloc(movieRepository: MovieRepositoryImpl(networkInfo: MockNetworkInfoHelper(),movieDataSource: MovieDataSourceImpl(dio: MockDio(),env: AppEnvDev())));
